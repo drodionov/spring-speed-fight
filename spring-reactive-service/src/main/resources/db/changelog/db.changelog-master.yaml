@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - include:
+      file: classpath:db/changelog/v1/initial-schema.yaml
+      relativeToChangelogFile: false

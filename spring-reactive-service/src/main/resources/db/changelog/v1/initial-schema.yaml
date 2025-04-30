@@ -1,0 +1,61 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: drodionov
+      changes:
+        - createTable:
+            tableName: book
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: title
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: author
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: publication_year
+                  type: int
+                  constraints:
+                    nullable: false
+
+  - changeSet:
+      id: 2
+      author: drodionov
+      changes:
+        - insert:
+            tableName: book
+            columns:
+              - column:
+                  name: title
+                  value: "The Great Gatsby"
+              - column:
+                  name: author
+                  value: "F. Scott Fitzgerald"
+              - column:
+                  type: int
+                  name: publication_year
+                  valueNumeric: 1925
+        - insert:
+            tableName: book
+            columns:
+              - column:
+                  name: title
+                  value: "To Kill a Mockingbird"
+              - column:
+                  name: author
+                  value: "Harper Lee"
+              - column:
+                  type: int
+                  name: publication_year
+                  valueNumeric: 1960

@@ -1,5 +1,17 @@
 server:
-  port: 8080  # Now configured here instead of POM
+  port: 8080
+
+application:
+  virtual-threads:
+    enabled: true
+  response:
+    delay:
+      ms: 10
+
+
+logging:
+  level:
+    org.apache.tomcat: DEBUG
 
 spring:
   application:

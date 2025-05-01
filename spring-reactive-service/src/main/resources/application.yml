@@ -1,6 +1,11 @@
 server:
   port: 8081
 
+application:
+  response:
+    delay:
+      ms: 10
+
 spring:
   r2dbc:
     url: r2dbc:h2:mem:///testdbReactive?options=DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
